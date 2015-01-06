@@ -1,0 +1,30 @@
+{% extends "TAILSbase.html" %}
+{% load staticfiles %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<div class="jumbotron">
+      <div class="container">
+		{% if form.errors %}
+			<p class="error"> Sorry, it's not a valid username or password</p>
+		{% endif %}
+
+		<form action="" method ="post"> {% csrf_token %}
+			<label for= "username"> User Name:</label>
+			<input type= "text" name="username" value="" id="username">
+			<label for = "password"> Password:</label>
+			<input type= "text" name="password" value="" id ="password">
+	
+			<input type="submit" value="login" />	
+			<input type="hidden" name="next" value="{{ next|escape }}" />
+	
+		</form>
+		<h2>
+		<p>Don't have an account?</p>
+			<ul class="nav nav-pills ">
+			<li class="active"><a href="http://127.0.0.1:8000/register">Sign Up</a></li>
+			</h2>
+  </div>
+</div> 
+{% endblock %}

@@ -1,0 +1,147 @@
+{% load staticfiles %}
+
+<!doctype html>
+
+<html>
+  <head>
+	<link href="{{STATIC_URL}}css/Oswald.css" rel="stylesheet">
+    <link href="{{STATIC_URL}}css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{STATIC_URL}}css/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="header">
+      <div class="container">
+        <a href="#" class="logo-icon">
+          <img src="{{STATIC_URL}}images/logo.png">
+        </a>
+
+        <ul class="menu">
+          <li><a href="#">Tutorials</a></li>
+          <li><a href="#">Help</a></li>
+          <li><a href="#">Web Tools</a></li>
+          <li><a href="#">Support</a></li>
+          <li><a href="#">Updates</a></li>
+		  <li><a href="#">Log Out</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle">Navigation <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="/navigation/">Home</a></li>
+			  <li><a href="#">Codes</a></li>
+              <li><a href="#">Class Diagram</a></li>
+              <li><a href="#">Sequence Diagram</a></li>
+              <li><a href="#">Simulation</a></li> 
+              <li><a href="#">About Us</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="slider">
+
+      <div class="slide active-slide">
+        <div class="container">
+          <div class="row">
+            <div class="slide-copy col-xs-5">
+              <h1>What is Cobweb Algorithm</h1>
+              <p>It is an unsupervised, incremental, conceptual and polythetic clustering algorithm.</p>
+              
+              <ul class="get-definition">
+                <li id="unsupervised"><a href="#">Unsupervised</a></li>
+                <li id="incremental"><a href="#">Incremental</a></li>
+                <li id="conceptual"><a href="#">Conceptual</a></li>
+                <li id="polythetic"><a href="#">Polythetic</a></li>
+              </ul>
+            </div>
+			
+            <div class="slide-img col-xs-7"> 
+				<ul class="posts">
+				</ul> 
+            </div>
+			
+          </div>
+        </div>      
+      </div>
+
+      <div class="slide">
+        <div class="container">
+          <div class="row">
+            <div class="slide-copy col-xs-5">
+              <h1>Unsupervised</h1>
+              <p>When we talk about unsupervised algorithm, we are actually talking about one of the two important learning algorithms in machine learning .The other one is supervised algorithm. To decide a problem is unsupervised or not is based on whether we know the desired outcome for the input data. In unsupervised learning, we don’t know the correct answer for each example. What we need to do is to let the algorithm discover any interesting structure in the data.</p>
+            </div>
+            
+			</div>
+            <div class="slide-img col-xs-7"> 
+				<ul class="posts">
+				</ul> 
+            </div>
+			
+        </div>
+       </div>      
+     
+
+      <div class="slide">
+        <div class="container">
+          <div class="row">
+            <div class="slide-copy col-xs-5">
+              <h1>Incremental</h1>
+              <p>It means that data is inputted as a stream. Only one item is processed at a time.</p> 
+            </div>
+			
+            <div class="slide-img col-xs-7">
+              <img src="http://s3.amazonaws.com/codecademy-content/courses/ltp2/img/flipboard/magazines.png">
+            </div>
+			
+          </div>
+        </div>      
+      </div> 
+
+	  <div class="slide">
+        <div class="container">
+          <div class="row">
+            <div class="slide-copy col-xs-5">
+              <h1>Conceptual</h1>
+              <p>What makes conceptual clustering differ from ordinary data clustering is that a concept description will be created for each cluster generated as the algorithm proceeds.</p>
+            </div>
+		  </div>
+		  
+            <div class="slide-img col-xs-7">
+              
+            </div>
+			
+          </div>
+        </div>      
+    	  
+      <div class="slide">
+        <div class="container">
+          <div class="row">
+            <div class="slide-copy col-xs-5">
+              <h1>Polythetic</h1>
+              <p>It means COBWEB considers all the attribute values when an new item is added instead of evaluate each attribute value one by one.</p>  
+            </div>
+			
+            <div class="slide-img col-xs-7">
+              <img src="http://s3.amazonaws.com/codecademy-content/courses/ltp2/img/flipboard/bw.png" width="540px">
+            </div>
+          </div>
+        </div>      
+      </div> 
+    </div>
+
+    <div class="slider-nav">
+      <a href="#" class="arrow-prev"><img src="http://s3.amazonaws.com/codecademy-content/courses/ltp2/img/flipboard/arrow-prev.png"></a>
+      <ul class="slider-dots">
+        <li class="dot active-dot">&bull;</li>
+        <li class="dot">&bull;</li>
+        <li class="dot">&bull;</li>
+		<li class="dot">&bull;</li>
+        <li class="dot">&bull;</li>
+      </ul>
+      <a href="#" class="arrow-next"><img src="http://s3.amazonaws.com/codecademy-content/courses/ltp2/img/flipboard/arrow-next.png"></a>
+    </div> 
+    
+    <script src="{{STATIC_URL}}js/jquery.min.js"></script>
+    <script src="{{STATIC_URL}}js/TAILS_concept.js"></script>
+  </body>
+</html>

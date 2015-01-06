@@ -1,0 +1,63 @@
+/* css for the welcome page /Liyang Hao*/
+
+.nav a {
+  color: #5a5a5a;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 14px;
+  text-transform: uppercase;
+}
+.nav li{display:inline;
+color: #1cc;
+  font-size: 16px;
+  font-weight: bold;
+  
+}
+
+.jumbotron {
+  background-image:url('/static/images/background1.jpg');
+  height: 537px;
+}
+
+.jumbotron h1 {
+  color: #fff;
+  font-size: 44px;  
+  font-family: 'Shift', sans-serif;
+  font-weight: bold;
+}
+
+.jumbotron h2 {
+  color: rgb(170, 230, 230);
+  font-size: 18x;  
+  font-family: 'Shift', sans-serif;
+  font-weight: bold;
+}
+.jumbotron li {
+  padding-top: 20px;
+  padding-left: 25px;
+  padding-right: 45px;
+  font-size: 20px;
+  color: #fff;
+}
+
+.jumbotron .container {
+  position: relative;
+  top: 100px;
+}
+
+.neighborhood-guides {
+    background-color :#efefef;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+.neighborhood-guides h2 {
+	font-family : Monospace;
+    color :#393c3d;
+    font-size: 36px;
+}
+
+.neighborhood-guides p {
+	font-family : Monospace;
+    margin-bottom :13px;
+    font-size: 20px;
+}

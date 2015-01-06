@@ -1,0 +1,82 @@
+{% load staticfiles %}
+<html>
+<head>
+    <!-- Import JQuery Source -->
+    <!--<script src="http://code.jquery.com/jquery-latest.js"></script>-->
+    <script src="{{STATIC_URL}}js/jquery1_9_1min.js"></script>
+    
+    <!-- Import Raphael JS Source from raphaeljs.com -->
+    <script src="{{STATIC_URL}}js/raphael-min.js"></script>
+    
+    <!--script src="/static/js/makeTree.js"></script -->
+    <script src="{{STATIC_URL}}js/treeFunctions.js"></script>
+    <script src="{{STATIC_URL}}js/draw.js"></script>
+    <script src="{{STATIC_URL}}js/cluster.js"></script>
+    <script src="{{STATIC_URL}}js/utility.js"></script>
+    <script src="{{STATIC_URL}}js/merging.js"></script>
+    <script src="{{STATIC_URL}}js/selection.js"></script>
+    <script src="{{STATIC_URL}}js/treeZoomFunctionality.js"></script>
+
+    <!-- Link to css -->
+    <link rel="stylesheet" href="{{STATIC_URL}}css/new.css" />
+    <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/btn.css" >
+
+</head>
+<body onload="getSelection()">
+    <div id="pagewrap" >
+        <div id="ne"></div>
+        <div id="header">
+            <h2>Conceptual Clustering Tree Display Page</h2>
+        
+            <p class="center">To add objects to the tree, select specific attribute values for each attribute and click "Add," 
+            or add elements with random attributes by clicking on "Add Random Element." Options to add multiple elements are available as well. If you make an error,
+            you can undo it with the "Undo Last Action" button, but this may take some time to complete.  </p>
+        </div>
+        <div id="content" >
+            
+            <div id="attributeSelectors">
+            </div>
+            <div id="notepad">
+                <div id="clusterZone"> </div>
+                <div id="canvasMenu">
+                    <textarea readonly id="actionLog"> </textarea>
+                    <button id="zoom">Zoom</button>
+                    <button id="zoomOut">ZoomOut</button>
+                </div>
+                
+            </div>
+            <div id="btnContainer">
+                <button class="button" id="addObject" onclick="addObjects(1)" title="First select each attribute value and then click this button">Add</button>
+                <button class="button" id="addMultiple" onclick="addObjects()" title="Select each attribute value, type in the number of objects and click this button">Add Multiple 
+                <input class="amount" type="text" name="numElements" value = "0" onkeydown="if (event.keyCode == 13) document.getElementById('addMultiple').click()"></button>
+                <button class="button" id="addRandomObject" onclick="">Add Random Element</button>
+                <button class="button" id="addRandomObjects" onclick=" ">Add 10 Random Elements</button>
+                <button class="button" id="addRandomArbitraryObjects" onclick="addRandomObjects()" title="Type in the number of objects first and then click this button">Add Multiple Random
+                <input class="amount" type="text" name="numRandom" value = "0" onkeydown="if (event.keyCode == 13) document.getElementById('addRandomArbitraryObjects').click()"></button>
+                <button class="button" onclick="undoLastStep()">Undo Last Action</button> 
+            </div>
+            <textarea readonly id="hoverBox"> </textarea>
+            <div id="textFileInput2">
+                    <textarea id="attrFile2" placeholder="Each object should be ended with a ''!''. An example could be:
+
+square,large,blue!
+square,large,red!
+circle,small,green!
+triangle,medium,yelllow!"></textarea>
+                    <div class="button" id="load2">Load Vector Values
+                </div>
+        </div>
+    </div>
+    <script>
+        /********** Tree File Upload **********/
+        function parseFile2(text) {
+            addMultipleObjectsFromText(text.replace(/\n|\r/g, ""));
+        }
+        $("#load2").on("click", function(event){
+            parseFile2($("#attrFile2").val()); 
+            $("#attrFile2").val("");        
+        });
+    </script>
+</body>
+
+</html>

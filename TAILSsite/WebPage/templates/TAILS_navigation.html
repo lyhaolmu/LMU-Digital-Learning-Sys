@@ -1,0 +1,71 @@
+{% extends "TAILSbase.html" %}
+{% load staticfiles %}
+
+{% block title %}Navigation{% endblock %}
+{% block  nav%}
+<div class="nav">
+	<div class="container">	
+		<ul class="pull-right">
+			<li><a href="#">Help</a></li>
+			<li><a href="#">Updates</a></li>
+			<li class="active"><a href="http://127.0.0.1:8000/accounts/logout">Log Out</a></li>
+		</ul>
+	  
+		<ul class="pull-left">
+		{% if user.is_authenticated %}
+			<li>Welcome, {{user.username}}. Thanks for logging in.</li>
+		{% else %}
+			<li>Welcome, {{newst}}. Thank you for logging in.</li>
+		{% endif %}	
+		</ul> 
+	</div>
+</div>
+{% endblock %} 
+
+{% block content %}
+
+ <div class="neighborhood-guides">
+        <div class="container">
+            <h2>Tails Guide</h2>
+            <p>Not sure where to start? Try one of these.</p>
+				
+			
+		
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="thumbnail">
+						<a class="panel" href="/concept/">
+							<img src= "{{STATIC_URL}}images/bg1.png">
+						</a>
+                    </div>
+                    <div class="thumbnail">
+						<a class="panel" href="#">
+							<img src="{{STATIC_URL}}images/bg2.png" >
+						</a>
+                    </div>
+                </div>
+				
+                <div class="col-md-4">
+                    <div class="thumbnail">
+						<a class="panel" href="#">
+							<img src="{{STATIC_URL}}images/bg3.png" alt="">
+						</a>
+                    </div>
+                    <div class="thumbnail">
+						<a class="panel" href="/index/">
+							<img src="{{STATIC_URL}}images/bg4.png" alt="">
+						</a>
+                    </div>
+                </div>
+				
+                <div class="col-md-4">
+                     <div class="thumbnail">
+						<a class="panel" href="/index/">
+							<img src="{{STATIC_URL}}images/bg5.png">
+						</a>	
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock%}

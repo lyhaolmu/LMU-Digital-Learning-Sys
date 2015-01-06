@@ -1,0 +1,38 @@
+
+{% extends "TAILSbase.html" %}
+{% load staticfiles %}
+{% block title %}Welcome To TAILS{% endblock %}
+
+{% block  nav%}
+<div class="nav">
+	<div class="container">
+	  <ul class="nav nav-tabs ">
+	  <ul class="pull-right">
+		{% if user.is_authenticated %}
+			<li>Welcome, {{ user.username }}</li>
+			<li><a href="/navigation/">Next</a></li>
+		{% else %}
+			<li><a href="http://127.0.0.1:8000/register/">Sign Up</a></li>
+			<li class="active"><a href="http://127.0.0.1:8000/accounts/login">Log In</a></li>
+		{% endif %}	
+		
+	  </ul>
+	  <ul class="pull-left">
+		<li><a href="#">Help</a></li>
+		<li><a href="#">Updates</a></li>
+		</ul>
+	  </ul>
+	</div>
+</div>
+{% endblock %} 
+{% block content %}
+ <div class="jumbotron">
+      <div class="container">
+        <h1>Conceptual Clustering Simulation of TAILS Project</h1>
+        <p><ul><li>This application is to familiarize users with the COBWEB conceptual clustering algorithm.</li>
+			<li>Usage activities will be recorded for modelling learning patterns.</li>
+			</ul>
+		</p>
+      </div>
+    </div> 
+{% endblock%}
