@@ -6,9 +6,8 @@ from django.template import RequestContext
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 
-
 import os,sys,sqlite3,string,datetime
-from UserLog.models import Student, StudentLog
+from UserLog.models import StudentLog
 
 def TAILSwelcome(request):
      return render_to_response("welcome.html",context_instance=RequestContext(request))
@@ -18,8 +17,7 @@ def register(request):
         cform = UserCreationForm(request.POST)
         if cform.is_valid():
             new_user = cform.save()
-            p = Student.objects.create(first_name = new_user, last_name = "new_user", email="lynn@gmail.com")
-            p1= StudentLog.objects.create(studentid = new_user, students = Student.objects.get(first_name=new_user),active_datetime=datetime.datetime.now())
+            p1 = StudentLog.objects.create(first_name = new_user, last_name = "new_user", active_datetime=datetime.datetime.now())
             return render_to_response("TAILS_navigation.html",{'newst': new_user},context_instance=RequestContext(request))  
     else:
         cform = UserCreationForm()
@@ -64,7 +62,7 @@ def TAILS_concept(request):
 	 
 @login_required
 def logout(request):
-      #p1 = StudentLog.objects.create(studentid = new_user, students = Student.objects.get(first_name=new_user),active_datetime=datetime.datetime.now())
+     p1 = StudentLog.objects.create(studentid = new_user, students = Student.objects.get(first_name=new_user),active_datetime=datetime.datetime.now())
      return render_to_response("logged_out.html",context_instance=RequestContext(request))
 
 

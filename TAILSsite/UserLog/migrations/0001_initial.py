@@ -11,23 +11,14 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Student',
-            fields=[
-                ('id', models.AutoField(primary_key=True, auto_created=True, verbose_name='ID', serialize=False)),
-                ('first_name', models.CharField(max_length=30)),
-                ('last_name', models.CharField(max_length=40)),
-                ('email', models.EmailField(blank=True, max_length=75, verbose_name='e-mail')),
-            ],
-            options={
-            },
-            bases=(models.Model,),
-        ),
-        migrations.CreateModel(
             name='StudentLog',
             fields=[
-                ('id', models.AutoField(primary_key=True, auto_created=True, verbose_name='ID', serialize=False)),
+                ('id', models.AutoField(auto_created=True, serialize=False, primary_key=True, verbose_name='ID')),
+                ('first_name', models.CharField(max_length=30)),
+                ('last_name', models.CharField(max_length=40)),
+                ('email', models.EmailField(verbose_name='e-mail', blank=True, max_length=75)),
                 ('active_datetime', models.DateTimeField(blank=True, null=True)),
-                ('student', models.OneToOneField(to='UserLog.Student')),
+                ('inactive_datetime', models.DateTimeField(blank=True, null=True)),
             ],
             options={
             },

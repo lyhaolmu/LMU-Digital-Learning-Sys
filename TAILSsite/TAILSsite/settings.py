@@ -17,7 +17,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '+rto3w*!12ak*#t@z7qg85)95q1p7vodj$3(r4if+1iriajiu+'
+SECRET_KEY = '0gc$pndor4^g5f91@2m__x6i8c@^2rb+%f89($=xq4adcso4h='
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -27,10 +27,12 @@ TEMPLATE_DEBUG = True
 ALLOWED_HOSTS = []
 
 TEMPLATE_DIRS = (
-    'E:/TAILSsite/templates',
-    'E:/TAILSsite/WebPage/templates',
+    os.path.join(BASE_DIR, 'templates'),
+    #'E:/TAILSsite/templates',
+    #'E:/TAILSsite/WebPage/templates',
     
 )
+
 # Application definition
 
 INSTALLED_APPS = (
@@ -41,7 +43,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'UserLog',
-    'WebPage',
+    'WebPage'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -85,9 +87,11 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
+
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
-    'E:/TAILSsite/static',
-    'E:/TAILSsite/WebPage/static',  
+    #os.path.join(BASE_DIR, 'WebPage/static'),
+    #'E:/TAILSsite/static',
+    #'E:/TAILSsite/WebPage/static',  
 )
