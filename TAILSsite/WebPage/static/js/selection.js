@@ -68,7 +68,7 @@ var next = function(){
 		localStorage.setItem(attr+'Num', attributeValNum[attr]);
 	}
 	localStorage.setItem('attributeNum', attributeNum);
-	window.location = "./tree.html";
+	window.location = "/tree";
 }
 
 var useDefault = function() {
